@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Navigate the page and use its key contact links",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "landing page content",
+      "navigation anchors",
+      "Calendly booking",
+      "helpdesk consultation",
+      "direct phone contact",
+      "physical address"
+    ],
+    "description": "Verifies visitors can move through the main sections and reach the supplied booking and helpdesk destinations.",
+    "steps": [
+      "Open the landing page",
+      "Use the navigation to open Services and FAQ",
+      "Open the Book a Session link and the Helpdesk link",
+      "Open Contact and inspect the phone and address details"
+    ],
+    "expected": "The matching sections and supplied links work, and both telephone numbers and the Abuja address are visible in Contact."
+  },
+  {
+    "name": "Use the mobile navigation and FAQ",
+    "viewport": "mobile",
+    "covers": ["responsive layout", "mobile hamburger menu", "FAQ accordion"],
+    "description": "Verifies the mobile menu opens and closes and FAQ answers can be expanded.",
+    "steps": [
+      "Open the page at a mobile viewport",
+      "Open the navigation menu and choose Programs",
+      "Open an FAQ question"
+    ],
+    "expected": "The menu closes after navigation, the Programs section is reached, and the selected answer is shown."
+  },
+  {
+    "name": "Validate and submit the inquiry form",
+    "viewport": "desktop",
+    "covers": [
+      "required form validation",
+      "email validation",
+      "phone validation",
+      "form success state"
+    ],
+    "description": "Verifies invalid contact details are rejected and valid form content receives a clear success response.",
+    "steps": [
+      "Submit the inquiry form with fields empty",
+      "Enter a valid name, email, phone, interest, and message",
+      "Submit the form"
+    ],
+    "expected": "The empty form shows field errors; valid entries show the form's success message and clear the inputs."
+  }
+]

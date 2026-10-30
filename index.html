@@ -1,0 +1,2002 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f7" />
+    <title>
+      Manus Dei Christian Centre | Transforming Lives, Reviving Souls
+    </title>
+    <meta
+      name="description"
+      content="Manus Dei Christian Centre is a global organization dedicated to transformation and revival through the Clinic, United community, and Ministry."
+    />
+    <meta
+      name="keywords"
+      content="Manus Dei Christian Centre, Christian counselling, prayer, Christian training, revival, fellowship"
+    />
+    <meta property="og:title" content="Manus Dei Christian Centre" />
+    <meta
+      property="og:description"
+      content="Transforming Lives, Reviving Souls... A global organization dedicated to transformation and revival."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/resources/MDCC-MAIN-LOGO.png" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-weight='bold' font-size='30' fill='%23ffbd59'%3EMD%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --black: #000;
+        --gold: #ffbd59;
+        --grey: #858585;
+        --paper: #f7f7f7;
+        --white: #fff;
+        --line: #dedbd6;
+        --serif: 'Times New Roman', Georgia, serif;
+        --body: 'Open Sans', Arial, sans-serif;
+        --wrap: 1160px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 92px;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--black);
+        font: 16px/1.7 var(--body);
+      }
+      a {
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+      :focus-visible {
+        outline: 3px solid #a76200;
+        outline-offset: 4px;
+      }
+      .wrap {
+        width: min(var(--wrap), calc(100% - 48px));
+        margin-inline: auto;
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.72rem;
+        letter-spacing: 0.19em;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+      .eyebrow:before {
+        content: '';
+        height: 1px;
+        width: 30px;
+        background: var(--gold);
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+      h1,
+      h2,
+      .serif {
+        font-family: var(--serif);
+        font-weight: 400;
+        line-height: 1.08;
+      }
+      h2 {
+        font-size: clamp(2.35rem, 5vw, 4.2rem);
+        letter-spacing: -0.025em;
+        margin: 12px 0 22px;
+      }
+      .section {
+        padding: 108px 0;
+      }
+      .section-head {
+        max-width: 710px;
+        margin-bottom: 48px;
+      }
+      .section-head p {
+        max-width: 650px;
+        color: #484848;
+      }
+      .gold {
+        color: #a65f00;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 50px;
+        padding: 13px 21px;
+        border: 1px solid var(--gold);
+        border-radius: 2px;
+        background: var(--gold);
+        color: #000;
+        text-decoration: none;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 800;
+        transition:
+          transform 0.2s,
+          background 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        background: #ffc96f;
+      }
+      .btn-outline {
+        background: transparent;
+        border-color: rgba(0, 0, 0, 0.45);
+      }
+      .btn-outline:hover {
+        background: #fff;
+      }
+      .btn-dark {
+        background: #000;
+        color: #fff;
+        border-color: #000;
+      }
+      .btn-dark:hover {
+        background: #222;
+      }
+      .text-link {
+        font-weight: 700;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+      .nav {
+        height: 82px;
+        position: sticky;
+        inset: 0 0 auto;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e9e7e4;
+      }
+      .nav-inner {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand {
+        width: 210px;
+        flex: none;
+      }
+      .brand img {
+        width: 100%;
+        max-height: 66px;
+        object-fit: contain;
+      }
+      .brand-fallback {
+        font: 22px var(--serif);
+        text-decoration: none;
+        display: none;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(15px, 2vw, 27px);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .nav-links a {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: #333;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #9a5900;
+      }
+      .nav-cta {
+        white-space: nowrap;
+        min-height: 43px;
+        padding: 10px 15px;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: 0;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 23px;
+        height: 2px;
+        background: #000;
+        margin: 5px auto;
+        transition: 0.2s;
+      }
+      .hero {
+        min-height: 680px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        background: #171717;
+        color: #fff;
+      }
+      .hero:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.88),
+            rgba(0, 0, 0, 0.61) 51%,
+            rgba(0, 0, 0, 0.23)
+          ),
+          linear-gradient(0deg, rgba(0, 0, 0, 0.45), transparent 55%),
+          repeating-linear-gradient(
+            90deg,
+            transparent 0 8%,
+            rgba(255, 255, 255, 0.035) 8.1% 8.25%
+          ),
+          linear-gradient(135deg, #252525, #777 48%, #252525);
+      }
+      .hero:after {
+        content: '';
+        position: absolute;
+        right: -9%;
+        top: -25%;
+        width: 56%;
+        height: 140%;
+        border-left: 1px solid rgba(255, 189, 89, 0.45);
+        transform: skew(-15deg);
+        z-index: -1;
+      }
+      .hero-content {
+        max-width: 790px;
+        padding: 108px 0 125px;
+      }
+      .hero .eyebrow {
+        color: #f3d5a4;
+      }
+      .hero h1 {
+        font-size: clamp(3.4rem, 8vw, 7rem);
+        margin: 24px 0 14px;
+        letter-spacing: -0.035em;
+      }
+      .hero-tag {
+        font: italic clamp(1.45rem, 3vw, 2.1rem) var(--serif);
+        color: var(--gold);
+        margin: 0 0 21px;
+      }
+      .hero-copy {
+        max-width: 570px;
+        color: #e8e5e0;
+        font-size: 1.05rem;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 32px;
+      }
+      .hero .btn-outline {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.55);
+      }
+      .hero .btn-outline:hover {
+        color: #000;
+      }
+      .hero-note {
+        position: absolute;
+        right: 4%;
+        bottom: 34px;
+        color: #fff8;
+        font-size: 0.67rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        writing-mode: vertical-rl;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.82fr;
+        gap: 80px;
+        align-items: center;
+      }
+      .about-copy p {
+        color: #424242;
+        max-width: 690px;
+      }
+      .about-mark {
+        background: var(--white);
+        min-height: 430px;
+        display: grid;
+        place-items: center;
+        padding: 35px;
+        position: relative;
+        overflow: hidden;
+      }
+      .about-mark:before,
+      .about-mark:after {
+        content: '';
+        position: absolute;
+        border: 1px solid rgba(255, 189, 89, 0.32);
+        width: 75%;
+        height: 75%;
+        transform: rotate(45deg);
+      }
+      .about-mark:after {
+        width: 60%;
+        height: 60%;
+      }
+      .about-mark img {
+        width: 75%;
+        position: relative;
+        z-index: 1;
+      }
+      .highlights {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 54px;
+      }
+      .highlight {
+        padding: 25px 24px;
+        background: #fff;
+        border-top: 2px solid var(--gold);
+        text-decoration: none;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .highlight:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 32px #0000000d;
+      }
+      .highlight h3 {
+        font: 1.55rem var(--serif);
+        margin: 0 0 10px;
+      }
+      .highlight p {
+        color: #555;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+      .highlight span {
+        display: inline-block;
+        color: #8d5000;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-top: 18px;
+      }
+      .services {
+        background: #fff;
+      }
+      .service-list {
+        border-left: 1px solid #000;
+      }
+      .service-row {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.72fr) 1.5fr;
+        gap: 50px;
+        padding: 26px 28px;
+        border-bottom: 1px solid #e7e4e0;
+        position: relative;
+      }
+      .service-row:before {
+        content: '';
+        position: absolute;
+        left: -4px;
+        top: 34px;
+        width: 7px;
+        height: 7px;
+        background: var(--gold);
+        border-radius: 50%;
+      }
+      .service-row h3 {
+        margin: 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.13em;
+        line-height: 1.5;
+      }
+      .service-row p {
+        margin: 0;
+        color: #555;
+      }
+      .service-row ul {
+        margin: 10px 0 0;
+        padding-left: 20px;
+        color: #555;
+      }
+      .cta-band {
+        margin-top: 34px;
+        padding: 27px 32px;
+        background: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .cta-band p {
+        margin: 0;
+        font: 1.45rem var(--serif);
+      }
+      .cta-band p span {
+        display: block;
+        font: 0.85rem var(--body);
+        margin-top: 5px;
+      }
+      .edification {
+        background: #121212;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      .edification:after {
+        content: '';
+        position: absolute;
+        width: 430px;
+        height: 430px;
+        border: 1px solid #ffbd5933;
+        right: -170px;
+        top: -150px;
+        transform: rotate(45deg);
+        box-shadow:
+          0 0 0 35px #ffbd5908,
+          0 0 0 70px #ffbd5908;
+      }
+      .edification .wrap {
+        position: relative;
+        z-index: 1;
+      }
+      .edification .eyebrow {
+        color: #f5d8a9;
+      }
+      .edification h2 {
+        max-width: 690px;
+      }
+      .edification p {
+        color: #d4d4d4;
+        max-width: 770px;
+      }
+      .edification .btn {
+        margin-top: 14px;
+      }
+      .arms-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .arm {
+        padding: 32px 27px;
+        background: #111;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+      .arm:nth-child(2) {
+        background: var(--gold);
+        color: #000;
+      }
+      .arm:nth-child(3) {
+        background: #858585;
+        color: #fff;
+      }
+      .arm-logo {
+        height: 112px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        padding: 10px 22px;
+        margin-bottom: 24px;
+        overflow: hidden;
+      }
+      .arm-logo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+      .arm h3 {
+        font: 2rem var(--serif);
+        margin: 0 0 14px;
+      }
+      .arm > p {
+        font-size: 0.89rem;
+        opacity: 0.9;
+      }
+      .arm h4 {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin: 13px 0 6px;
+      }
+      .arm ul {
+        padding-left: 19px;
+        font-size: 0.83rem;
+        opacity: 0.9;
+      }
+      .arm .btn {
+        margin-top: auto;
+        align-self: flex-start;
+      }
+      .arm:nth-child(2) .btn {
+        border-color: #000;
+      }
+      .arm-tag {
+        font: italic 1.23rem var(--serif);
+        margin: 0 0 12px;
+      }
+      .programs {
+        background: #fff;
+      }
+      .program-groups {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      .program-group h3 {
+        font: 1.8rem var(--serif);
+        padding-bottom: 16px;
+        border-bottom: 1px solid #d8d5d0;
+      }
+      .program-card {
+        padding: 20px 0;
+        border-bottom: 1px solid #eae8e5;
+      }
+      .program-card h4 {
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin: 0 0 7px;
+      }
+      .program-card p {
+        margin: 0;
+        color: #555;
+        font-size: 0.88rem;
+      }
+      .proof {
+        background: #f1eee9;
+      }
+      .proof-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+      .proof-quote {
+        font: italic clamp(1.8rem, 4vw, 3.2rem)/1.22 var(--serif);
+        max-width: 620px;
+        margin: 0;
+      }
+      .proof-quote span {
+        color: #a65f00;
+      }
+      .proof-aside {
+        border-left: 1px solid #bbb;
+        padding: 12px 0 12px 30px;
+        color: #555;
+      }
+      .proof-aside strong {
+        display: block;
+        color: #000;
+        font: 1.3rem var(--serif);
+        margin-bottom: 8px;
+      }
+      .partnership {
+        background: #0a0a0a;
+        color: #fff;
+      }
+      .partnership .section-head {
+        margin-bottom: 0;
+      }
+      .partnership p {
+        color: #d4d4d4;
+      }
+      .partnership .closing {
+        font: italic 1.55rem var(--serif);
+        color: var(--gold);
+        margin: 26px 0;
+      }
+      .schedule {
+        background: var(--gold);
+        padding: 30px 0;
+      }
+      .schedule-title {
+        font: 1.8rem var(--serif);
+        margin: 0 0 20px;
+      }
+      .schedule-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+      .schedule-item {
+        border-left: 1px solid #000;
+        padding: 3px 14px;
+      }
+      .schedule-item strong {
+        display: block;
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .schedule-item span {
+        font-size: 0.83rem;
+      }
+      .venue {
+        margin: 20px 0 0;
+        font-size: 0.8rem;
+      }
+      .faq {
+        background: #fff;
+      }
+      .faq-list {
+        max-width: 900px;
+        border-top: 1px solid #ddd;
+      }
+      .faq-item {
+        border-bottom: 1px solid #ddd;
+      }
+      .faq-question {
+        width: 100%;
+        padding: 22px 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        background: none;
+        border: 0;
+        text-align: left;
+        font: 1.3rem var(--serif);
+        cursor: pointer;
+      }
+      .faq-question span:last-child {
+        font: 1.3rem var(--body);
+        transition: transform 0.2s;
+      }
+      .faq-question[aria-expanded='true'] span:last-child {
+        transform: rotate(45deg);
+      }
+      .faq-answer {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.25s;
+      }
+      .faq-answer > div {
+        overflow: hidden;
+      }
+      .faq-answer p {
+        margin: 0;
+        padding: 0 30px 22px 4px;
+        color: #555;
+      }
+      .faq-question[aria-expanded='true'] + .faq-answer {
+        grid-template-rows: 1fr;
+      }
+      .contact {
+        display: grid;
+        grid-template-columns: 0.75fr 1.25fr;
+        gap: 70px;
+      }
+      .contact-info p {
+        color: #555;
+      }
+      .contact-details {
+        display: grid;
+        gap: 8px;
+        margin-top: 22px;
+      }
+      .contact-details p {
+        margin: 0;
+      }
+      .contact-details a {
+        font-weight: 700;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+      .footer-contact {
+        color: #d4d4d4;
+        font-size: 0.8rem;
+        line-height: 1.6;
+      }
+      .contact-links {
+        display: grid;
+        gap: 12px;
+        margin: 25px 0;
+      }
+      .contact-links a {
+        font-weight: 700;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+      .whatsapp-qr {
+        width: 220px;
+        height: 220px;
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid #e3dfd8;
+        margin: 24px 0 10px;
+      }
+      .whatsapp-qr img {
+        position: absolute;
+        width: 240%;
+        max-width: none;
+        left: -70%;
+        top: -210%;
+      }
+      .qr-caption {
+        max-width: 260px;
+        font-size: 0.78rem;
+        color: #555;
+      }
+      .form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .field {
+        display: grid;
+        gap: 6px;
+      }
+      .field.full {
+        grid-column: 1/-1;
+      }
+      .field label {
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        border: 1px solid #c8c4bd;
+        background: #fff;
+        padding: 12px 13px;
+        border-radius: 0;
+      }
+      .field textarea {
+        min-height: 125px;
+        resize: vertical;
+      }
+      .field-error {
+        min-height: 1em;
+        color: #a20e0e;
+        font-size: 0.75rem;
+      }
+      .form-message {
+        grid-column: 1/-1;
+        margin: 0;
+        font-weight: 700;
+      }
+      .form-message.success {
+        color: #176235;
+      }
+      .form-message.error {
+        color: #a20e0e;
+      }
+      .footer {
+        background: #000;
+        color: #fff;
+        padding: 62px 0 25px;
+      }
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr 1fr 1fr;
+        gap: 42px;
+        padding-bottom: 45px;
+      }
+      .footer-logo {
+        width: 220px;
+        margin-bottom: 18px;
+      }
+      .footer-brand p {
+        font: italic 1.25rem var(--serif);
+        color: var(--gold);
+      }
+      .footer-col h3 {
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+      .footer-col a {
+        display: block;
+        color: #d4d4d4;
+        text-decoration: none;
+        font-size: 0.86rem;
+        margin: 9px 0;
+      }
+      .footer-col a:hover {
+        color: var(--gold);
+      }
+      .footer-bottom {
+        border-top: 1px solid #ffffff30;
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        color: #aaa;
+        font-size: 0.75rem;
+      }
+      .socials {
+        display: flex;
+        gap: 14px;
+      }
+      .socials a {
+        color: #fff;
+      }
+      .back-top {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 46px;
+        height: 46px;
+        border: 0;
+        background: var(--gold);
+        color: #000;
+        font-size: 1.4rem;
+        z-index: 30;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+      }
+      .back-top.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      [data-reveal] {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.6s,
+          transform 0.6s;
+      }
+      [data-reveal].revealed {
+        opacity: 1;
+        transform: none;
+      }
+      @media (max-width: 920px) {
+        .nav-links {
+          gap: 13px;
+        }
+        .nav-links a {
+          font-size: 0.66rem;
+        }
+        .brand {
+          width: 180px;
+        }
+        .about-grid {
+          gap: 42px;
+        }
+        .contact {
+          gap: 40px;
+        }
+        .footer-top {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .schedule-grid {
+          grid-template-columns: repeat(3, 1fr);
+          row-gap: 20px;
+        }
+      }
+      @media (max-width: 760px) {
+        html {
+          scroll-padding-top: 76px;
+        }
+        .wrap {
+          width: min(100% - 36px, var(--wrap));
+        }
+        .nav {
+          height: 72px;
+        }
+        .brand {
+          width: 182px;
+        }
+        .menu-toggle {
+          display: block;
+          order: 3;
+        }
+        .nav-inner > .nav-cta {
+          margin-left: auto;
+        }
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 71px;
+          left: 0;
+          right: 0;
+          padding: 14px 22px 22px;
+          background: #fff;
+          border-bottom: 1px solid #ddd;
+          box-shadow: 0 14px 20px #00000012;
+          align-items: stretch;
+          gap: 0;
+        }
+        .nav-links.open {
+          display: flex;
+          flex-direction: column;
+        }
+        .nav-links li a {
+          display: block;
+          padding: 12px 4px;
+          font-size: 0.78rem;
+          border-bottom: 1px solid #eee;
+        }
+        .nav-cta {
+          min-height: 40px;
+          padding: 9px 11px;
+          font-size: 0.64rem;
+        }
+        .menu-toggle[aria-expanded='true'] span:first-child {
+          transform: translateY(7px) rotate(45deg);
+        }
+        .menu-toggle[aria-expanded='true'] span:nth-child(2) {
+          opacity: 0;
+        }
+        .menu-toggle[aria-expanded='true'] span:last-child {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+        .section {
+          padding: 78px 0;
+        }
+        .hero {
+          min-height: 610px;
+        }
+        .hero-content {
+          padding: 88px 0;
+        }
+        .hero h1 {
+          font-size: clamp(3.2rem, 14vw, 5rem);
+        }
+        .about-grid,
+        .proof-grid,
+        .contact {
+          grid-template-columns: 1fr;
+          gap: 35px;
+        }
+        .about-mark {
+          min-height: 300px;
+          grid-row: 1;
+        }
+        .highlights {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          margin-top: 35px;
+        }
+        .service-row {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          padding: 21px 20px;
+        }
+        .cta-band {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 24px;
+        }
+        .arms-grid {
+          grid-template-columns: 1fr;
+        }
+        .arm {
+          min-height: auto;
+        }
+        .arm .btn {
+          margin-top: 15px;
+        }
+        .program-groups {
+          grid-template-columns: 1fr;
+          gap: 35px;
+        }
+        .schedule-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-top {
+          grid-template-columns: 1fr 1fr;
+          gap: 30px;
+        }
+        .footer-brand {
+          grid-column: 1/-1;
+        }
+      }
+      @media (max-width: 420px) {
+        .wrap {
+          width: calc(100% - 30px);
+        }
+        .brand {
+          width: 145px;
+        }
+        .nav-inner {
+          gap: 8px;
+        }
+        .nav-cta {
+          font-size: 0.58rem;
+          padding: 8px;
+        }
+        .hero-actions .btn {
+          width: 100%;
+        }
+        .hero-note {
+          display: none;
+        }
+        .schedule-grid {
+          grid-template-columns: 1fr;
+        }
+        .form {
+          grid-template-columns: 1fr;
+        }
+        .field.full {
+          grid-column: auto;
+        }
+        .footer-top {
+          grid-template-columns: 1fr;
+        }
+        .footer-brand {
+          grid-column: auto;
+        }
+        .footer-bottom {
+          flex-direction: column;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+        [data-reveal] {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <nav class="wrap nav-inner" aria-label="Main navigation">
+        <a
+          class="brand"
+          href="#home"
+          aria-label="Manus Dei Christian Centre home"
+        >
+          <img
+            src="/resources/MDCC-MAIN-LOGO.png"
+            alt="Manus Dei Christian Centre logo"
+            onerror="
+              this.hidden = true;
+              this.nextElementSibling.style.display = 'block';
+            "
+          />
+          <span class="brand-fallback">Manus Dei Christian Centre</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#arms">Our Arms</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a
+          class="btn nav-cta"
+          href="https://calendly.com/manusdeicentre"
+          target="_blank"
+          rel="noopener"
+          >Book a Session</a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="nav-links"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="wrap hero-content">
+          <div class="eyebrow">Manus Dei Christian Centre</div>
+          <h1>Manus Dei<br />Christian Centre</h1>
+          <p class="hero-tag">Transforming Lives, Reviving Souls...</p>
+          <p class="hero-copy">
+            A global organization dedicated to transformation &amp; revival.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="btn"
+              href="https://calendly.com/manusdeicentre"
+              target="_blank"
+              rel="noopener"
+              >Book a Session <span aria-hidden="true">↗</span></a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://tinyurl.com/manusdeihelpdesk"
+              target="_blank"
+              rel="noopener"
+              >Consult With Us <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <span class="hero-note" aria-hidden="true"
+          >Faith · Fellowship · Transformation</span
+        >
+      </section>
+
+      <section class="section" id="about">
+        <div class="wrap">
+          <div class="about-grid">
+            <div class="about-copy" data-reveal>
+              <div class="eyebrow">Welcome</div>
+              <h2>
+                A place to grow, <span class="gold">belong</span> and be
+                renewed.
+              </h2>
+              <p>
+                Welcome to the Manus Dei Christian Centre. We are a global
+                organization dedicated to transformation &amp; revival. We seek
+                to nurture every believer in Christ into maturity, perfection
+                and fulfillment. We also seek to redeem the unchurched.
+              </p>
+              <p>
+                We are dedicated to bringing about individual and societal
+                transformation through our various arms.
+              </p>
+            </div>
+            <div class="about-mark" data-reveal>
+              <img
+                src="/resources/MDCC-LOGO-1.png"
+                alt="Manus Dei Centre brand logo"
+              />
+            </div>
+          </div>
+          <div class="highlights">
+            <a class="highlight" href="#clinic"
+              ><h3>Manus Dei Clinic</h3>
+              <p>
+                Confidential, Spirit-led sessions and treatment plans for your
+                tripartite well-being: spirit, soul, and body.
+              </p>
+              <span>Explore the Clinic →</span></a
+            >
+            <a class="highlight" href="#united"
+              ><h3>Manus Dei United</h3>
+              <p>
+                A non-denominational community to belong, build relationships,
+                and walk in alignment with God's purpose.
+              </p>
+              <span>Find your fellowship →</span></a
+            >
+            <a class="highlight" href="#ministry"
+              ><h3>Manus Dei Ministry</h3>
+              <p>
+                Christian programs, outreaches and events that bring healing,
+                revival, and realignment.
+              </p>
+              <span>Discover our ministry →</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section services" id="services">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <div class="eyebrow">Care and formation</div>
+            <h2>Services at the Centre</h2>
+            <p>
+              Wherever you are on your journey, there is a place to be heard,
+              encouraged and equipped.
+            </p>
+          </div>
+          <div class="service-list">
+            <article class="service-row">
+              <h3>GENERAL CONSULTATION</h3>
+              <p>
+                A safe space for individuals from diverse religious backgrounds
+                to consult on aspects of faith and life issues.
+              </p>
+            </article>
+            <article class="service-row">
+              <h3>PRAYER LINE</h3>
+              <p>
+                Connect with trained ministers who are ready to listen, offer
+                comfort, and pray for and with you regarding your specific
+                needs. Help is always just a call away.
+              </p>
+            </article>
+            <article class="service-row">
+              <h3>CHRISTIAN TRAINING PROGRAMS</h3>
+              <p>
+                Courses and programs to edify and equip you on your faith
+                journey. We walk with you to deepen your understanding of
+                scripture and core doctrines while acquiring practical skills
+                for spiritual growth.
+              </p>
+            </article>
+            <article class="service-row">
+              <h3>MINISTRY TRAINING PROGRAMS &amp; MANAGEMENT</h3>
+              <div>
+                <p>
+                  Designed for ministers called to serve, build, and steward
+                  with excellence. This includes:
+                </p>
+                <ul>
+                  <li>Ministry Consultation</li>
+                  <li>Ministerial Institute, an education platform</li>
+                  <li>
+                    Ministry Partnership, Collaboration and Fundraising to form
+                    alliances and develop sustainable fundraising strategies
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="service-row">
+              <h3>SANCTUARY RETREAT &amp; CONSECRATION CAMP</h3>
+              <p>
+                Designed for personal edification and spiritual growth.
+                Sanctuary Retreat offers space to step away from the noise of
+                the world and tune in to the Father. Consecration Camp is a
+                three-day program at the end of each month for repentance,
+                purification, and sanctification.
+              </p>
+            </article>
+            <article class="service-row">
+              <h3>SUBSIDIZED SUBSCRIPTION PACKAGES</h3>
+              <p>
+                Services throughout the Centre designed to nurture you
+                spiritually, mentally, and physically for a balanced,
+                faith-centred life. Free and paid options are available.
+              </p>
+            </article>
+          </div>
+          <div class="cta-band">
+            <p>
+              Consult With Us Today!<span
+                >To enquire more about our services, visit the helpdesk.</span
+              >
+            </p>
+            <a
+              class="btn btn-dark"
+              href="https://tinyurl.com/manusdeihelpdesk"
+              target="_blank"
+              rel="noopener"
+              >Visit the Helpdesk ↗</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section edification" id="edification">
+        <div class="wrap" data-reveal>
+          <div class="eyebrow">Edification Plan</div>
+          <h2>A thoughtful rhythm for your spiritual journey.</h2>
+          <p>
+            Our Edification Plan is a structured set of exercises, devotions,
+            and observances aimed at grounding participants in their spiritual
+            journey. It encompasses teachings, Bible study prompts, reflections,
+            prayers, meditation prompts and other spiritual practices, all
+            designed to deepen faith, foster spiritual growth, and strengthen
+            your personal relationship with God.
+          </p>
+          <a
+            class="btn"
+            href="https://tinyurl.com/manusdeihelpdesk"
+            target="_blank"
+            rel="noopener"
+            >Get Your Customized Edification Plan Today! ↗</a
+          >
+        </div>
+      </section>
+
+      <section class="section" id="arms">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <div class="eyebrow">Three expressions, one purpose</div>
+            <h2>Our Arms</h2>
+            <p>
+              Distinct expressions of care, fellowship, and outreach, working
+              together for transformation.
+            </p>
+          </div>
+          <div class="arms-grid">
+            <article class="arm" id="clinic" data-reveal>
+              <div class="arm-logo"><img src="/resources/MDCLINIC-LOGO.png" alt="Manus Dei Clinic logo"></div>
+              <h3>Manus Dei Clinic</h3>
+              <p>
+                The Manus Dei Clinic offers personalized, confidential sessions
+                and treatment plans designed to nurture clients towards
+                tripartite well-being (spirit, soul and body). Our Spirit-led
+                professionals provide Word-based insights and solutions, walking
+                with you towards complete wholeness.
+              </p>
+              <h4>Services at the Clinic</h4>
+              <ul>
+                <li>Guidance and Counselling</li>
+                <li>Spiritual Direction</li>
+                <li>Christian Therapy</li>
+                <li>Life Coaching</li>
+              </ul>
+              <h4>Areas of Focus</h4>
+              <p>
+                Relationships, Marriage and Family · Health and Wellness ·
+                Purpose and Direction
+              </p>
+              <p><strong>Your wellbeing is our priority!</strong></p>
+              <a
+                class="btn"
+                href="https://calendly.com/manusdeicentre"
+                target="_blank"
+                rel="noopener"
+                >Book a Session ↗</a
+              >
+            </article>
+            <article class="arm" id="united" data-reveal>
+              <div class="arm-logo"><img src="/resources/MDUNITED-LOGO.png" alt="Manus Dei United logo"></div>
+              <h3>Manus Dei United</h3>
+              <p>
+                A home for believers who desire to belong, build meaningful
+                relationships, and walk in alignment with God's purpose. A
+                fellowship of the Church, united in the body of Christ. It
+                transcends denomination, geography, and tradition, and is deeply
+                rooted in the Spirit.
+              </p>
+              <h4>The Community</h4>
+              <ul>
+                <li>
+                  <strong>Chapters:</strong> Interdenominational local hubs for
+                  worship, discipleship, and spiritual engagement.
+                </li>
+                <li>
+                  <strong>Individuals &amp; Groups:</strong> Those connected to
+                  Manus Dei who do not yet belong to a Chapter.
+                </li>
+              </ul>
+              <p class="arm-tag">A Fellowship of Like Minds!</p>
+              <a
+                class="btn btn-dark"
+                href="https://tinyurl.com/manusdeihelpdesk"
+                target="_blank"
+                rel="noopener"
+                >Join our Community ↗</a
+              >
+            </article>
+            <article class="arm" id="ministry" data-reveal>
+              <div class="arm-logo"><img src="/resources/MDMINISTRY-LOGO.png" alt="Manus Dei Ministry logo"></div>
+              <h3>Manus Dei Ministry</h3>
+              <p>
+                Responsible for programs, events, crusades, and outreaches that
+                bring healing, revival, and divine realignment to individuals
+                and communities. Each event embodies the compassion of Christ
+                and advances the Gospel with intentionality and impact.
+              </p>
+              <h4>Come and be transformed</h4>
+              <p>
+                Join our ministry programs and outreach events. Connect with the
+                helpdesk to learn about upcoming gatherings.
+              </p>
+              <a
+                class="btn"
+                href="https://tinyurl.com/manusdeihelpdesk"
+                target="_blank"
+                rel="noopener"
+                >Be Part of our Programs ↗</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section programs" id="programs">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <div class="eyebrow">Gather and grow</div>
+            <h2>Programs</h2>
+            <p>
+              Regular moments of prayer, worship, reflection, and community,
+              alongside focused outreach programs.
+            </p>
+          </div>
+          <div class="program-groups">
+            <div class="program-group" data-reveal>
+              <h3>At Manus Dei United</h3>
+              <article class="program-card">
+                <h4>Fresh Start Devotion</h4>
+                <p>
+                  From the 1st to the 8th of each month, we engage in prayer,
+                  fasting, and reflection, blocking out distractions, seeking
+                  clarity, and preparing spiritually for the month ahead.
+                </p>
+              </article>
+              <article class="program-card">
+                <h4>RAIN</h4>
+                <p>
+                  Every Sunday, we gather for worship, intercession, and
+                  prophetic ministration, creating space to encounter God's
+                  presence and receive divine insight.
+                </p>
+              </article>
+              <article class="program-card">
+                <h4>Friday Reflections</h4>
+                <p>
+                  Every Friday, we come together to pause, reflect, recalibrate,
+                  and realign to God's direction.
+                </p>
+              </article>
+              <article class="program-card">
+                <h4>Tongues Festival</h4>
+                <p>
+                  Every 14th to 16th of each month, we immerse ourselves in the
+                  Spirit for 48 hours. At every quarter of the day, we pray in
+                  the Spirit, stir spiritual gifts, and receive strength and
+                  renewal.
+                </p>
+              </article>
+            </div>
+            <div class="program-group" data-reveal>
+              <h3>At Manus Dei Ministry</h3>
+              <article class="program-card">
+                <h4>RAIN Open-Air Outreach</h4>
+                <p>
+                  A week-long evangelistic program reaching underserved and
+                  vulnerable communities with the love and message of Jesus
+                  Christ. It culminates in a Holy Ghost Prayer and Revival
+                  Meeting marked by worship, healing, and the prophetic.
+                </p>
+              </article>
+              <article class="program-card">
+                <h4>Exoneration Conference</h4>
+                <p>
+                  A Spirit-empowered conference rooted in Romans 8:1, declaring
+                  liberty over guilt, shame, and spiritual bondage through
+                  worship, prophetic teaching, and Spirit-led intercession.
+                </p>
+              </article>
+              <article class="program-card">
+                <h4>Reflections</h4>
+                <p>
+                  A contemplative program offering space for spiritual clarity
+                  and renewal through worship, teaching, and Spirit-led
+                  dialogue.
+                </p>
+              </article>
+              <article class="program-card">
+                <h4>Balm of Gilead Crusade</h4>
+                <p>
+                  Inspired by Jeremiah 8:22 and Isaiah 61:1, an outreach where
+                  the wounded are healed, the broken restored, and captives set
+                  free by the power of Jesus Christ.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section proof" aria-label="Our purpose">
+        <div class="wrap proof-grid">
+          <p class="proof-quote" data-reveal>
+            “We are dedicated to bringing about individual and societal
+            <span>transformation.</span>”
+          </p>
+          <div class="proof-aside" data-reveal>
+            <strong>A shared journey of faith</strong>
+            <p>
+              From confidential care to interdenominational fellowship and
+              community outreach, every arm of Manus Dei Christian Centre serves
+              a common hope: healing, revival, and realignment.
+            </p>
+            <a class="text-link" href="#arms">Meet our three arms →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section partnership" id="partnership">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <div class="eyebrow">Partnerships &amp; outreach</div>
+            <h2>
+              Transformation grows through
+              <span class="gold">working together.</span>
+            </h2>
+            <p>
+              We recognize that engaging with communities and collaborating with
+              local institutions is essential for expanding our impact. By
+              forming partnerships with individuals, schools, churches,
+              hospitals, restaurants, hotels, community organizations, and more,
+              we can extend our services and initiatives to a wider audience.
+              These collaborations also enable us to customize our offerings to
+              align with the needs of local communities and persons receiving
+              these programs and services.
+            </p>
+            <p class="closing">
+              We Look Forward to Working with you for your Transformation.
+            </p>
+            <a
+              class="btn"
+              href="https://tinyurl.com/manusdeihelpdesk"
+              target="_blank"
+              rel="noopener"
+              >Partner With Us ↗</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="schedule" aria-label="Recurring schedule">
+        <div class="wrap">
+          <h2 class="schedule-title">Recurring schedule</h2>
+          <div class="schedule-grid">
+            <div class="schedule-item">
+              <strong>Fresh Start Devotion</strong><span>1st–8th monthly</span>
+            </div>
+            <div class="schedule-item">
+              <strong>RAIN</strong><span>Every Sunday</span>
+            </div>
+            <div class="schedule-item">
+              <strong>Friday Reflections</strong><span>Every Friday</span>
+            </div>
+            <div class="schedule-item">
+              <strong>Tongues Festival</strong
+              ><span>14th–16th monthly · 48 hours</span>
+            </div>
+            <div class="schedule-item">
+              <strong>Consecration Camp</strong
+              ><span>Three days at month end</span>
+            </div>
+          </div>
+          <p class="venue">
+            <strong>Venue &amp; time zone:</strong> Please contact the helpdesk
+            for current venue, address, and event times.
+          </p>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <div class="eyebrow">A few answers</div>
+            <h2>Frequently asked questions</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What is the Manus Dei Christian Centre?</span
+                ><span aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <div>
+                  <p>
+                    Manus Dei Christian Centre is a global organization
+                    dedicated to transformation and revival. Through its Clinic,
+                    United community, and Ministry, it seeks to nurture
+                    believers and redeem the unchurched.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Who can use the Centre's services?</span
+                ><span aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <div>
+                  <p>
+                    People from diverse religious backgrounds can consult on
+                    faith and life issues. Manus Dei United is a
+                    non-denominational community for believers.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What is the Manus Dei Clinic and how do I book?</span
+                ><span aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <div>
+                  <p>
+                    The Clinic offers confidential, personalized sessions and
+                    treatment plans for spirit, soul, and body.
+                    <a
+                      href="https://calendly.com/manusdeicentre"
+                      target="_blank"
+                      rel="noopener"
+                      >Book through Calendly</a
+                    >.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Are the services free?</span
+                ><span aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <div>
+                  <p>
+                    Subsidized subscription packages are available in free and
+                    paid options. For details about a particular service,
+                    contact the helpdesk.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>When are the regular programs held?</span
+                ><span aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <div>
+                  <p>
+                    Fresh Start Devotion runs from the 1st to 8th monthly; RAIN
+                    is every Sunday; Friday Reflections is every Friday; Tongues
+                    Festival is the 14th to 16th monthly. Consecration Camp runs
+                    for three days at month end.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How can my church or organization partner with you?</span
+                ><span aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                <div>
+                  <p>
+                    Churches, schools, hospitals, businesses, and community
+                    organizations can enquire about partnership through the
+                    <a
+                      href="https://tinyurl.com/manusdeihelpdesk"
+                      target="_blank"
+                      rel="noopener"
+                      >Manus Dei helpdesk</a
+                    >.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="wrap contact">
+          <div class="contact-info" data-reveal>
+            <div class="eyebrow">We are here to help</div>
+            <h2>Start a conversation.</h2>
+            <p>
+              Tell us what you are looking for and we will help you find the
+              right next step.
+            </p>
+            <div class="contact-links">
+              <a
+                href="https://tinyurl.com/manusdeihelpdesk"
+                target="_blank"
+                rel="noopener"
+                >Visit the Helpdesk ↗</a
+              ><a
+                href="https://calendly.com/manusdeicentre"
+                target="_blank"
+                rel="noopener"
+                >Book a Clinic session ↗</a
+              >
+            </div>
+            <div class="whatsapp-qr" aria-label="Cropped WhatsApp Business QR code">
+              <img src="/resources/MDCC-QR-CODE.jpeg" alt="WhatsApp QR code for Manus Dei Christian Centre">
+            </div>
+            <p class="qr-caption">Scan the code to start a WhatsApp chat with Manus Dei Christian Centre.</p>
+            <div class="contact-details">
+              <p><strong>Phone</strong><br>
+                <a href="tel:+2349091001119">+234 909 100 1119</a><br>
+                <a href="tel:+2349091001110">+234 909 100 1110</a>
+              </p>
+              <p><strong>Address</strong><br>No. 558, Aliyu Dikko Street, Area 1, Garki, Abuja.</p>
+            </div>
+          </div>
+          <form class="form" id="contact-form" novalidate data-reveal>
+            <div class="field">
+              <label for="name">Name *</label
+              ><input id="name" name="name" autocomplete="name" required /><span
+                class="field-error"
+                id="name-error"
+              ></span>
+            </div>
+            <div class="field">
+              <label for="email">Email *</label
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              /><span class="field-error" id="email-error"></span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone *</label
+              ><input
+                id="phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                required
+                placeholder="+1 555 123 4567"
+              /><span class="field-error" id="phone-error"></span>
+            </div>
+            <div class="field">
+              <label for="interest">I'm interested in *</label
+              ><select id="interest" name="interest" required>
+                <option value="">Choose one</option>
+                <option>Consultation</option>
+                <option>Clinic session</option>
+                <option>Manus Dei United</option>
+                <option>Ministry programs</option>
+                <option>Partnership</option>
+                <option>Other</option></select
+              ><span class="field-error" id="interest-error"></span>
+            </div>
+            <div class="field full">
+              <label for="message">Message *</label
+              ><textarea id="message" name="message" required></textarea
+              ><span class="field-error" id="message-error"></span>
+            </div>
+            <p
+              class="form-message"
+              id="form-message"
+              role="status"
+              aria-live="polite"
+            ></p>
+            <div class="field full">
+              <button class="btn" type="submit">
+                Send your inquiry <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img
+              class="footer-logo"
+              src="/resources/MDCC-LOGO-2.png"
+              alt="Manus Dei Centre logo"
+              onerror="
+                this.hidden = true;
+                this.nextElementSibling.style.display = 'block';
+              "
+            /><span class="brand-fallback">Manus Dei Christian Centre</span>
+            <p>Transforming Lives, Reviving Souls...</p>
+          </div>
+          <div class="footer-col">
+            <h3>Explore</h3>
+            <a href="#about">About</a><a href="#services">Services</a
+            ><a href="#arms">Our Arms</a><a href="#programs">Programs</a
+            ><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h3>Our Arms</h3>
+            <a href="#clinic">Manus Dei Clinic</a
+            ><a href="#united">Manus Dei United</a
+            ><a href="#ministry">Manus Dei Ministry</a>
+          </div>
+          <div class="footer-col">
+            <h3>Connect</h3>
+            <a
+              href="https://calendly.com/manusdeicentre"
+              target="_blank"
+              rel="noopener"
+              >Book a Session</a
+            ><a
+              href="https://tinyurl.com/manusdeihelpdesk"
+              target="_blank"
+              rel="noopener"
+              >Helpdesk</a
+            ><a href="tel:+2349091001119">+234 909 100 1119</a
+            ><a href="tel:+2349091001110">+234 909 100 1110</a>
+            <p class="footer-contact">No. 558, Aliyu Dikko Street,<br>Area 1, Garki, Abuja.</p>
+            <div class="socials" aria-label="Social media links">
+              <a href="https://www.facebook.com/manusdeichristiancentre" target="_blank" rel="noopener">Facebook · @manusdeichristiancentre ↗</a>
+              <a href="https://www.instagram.com/manusdeichristiancentre/" target="_blank" rel="noopener">Instagram · @manusdeichristiancentre ↗</a>
+              <a href="https://www.instagram.com/manusdeiministry/" target="_blank" rel="noopener">Instagram · @manusdeiministry ↗</a>
+              <a href="https://www.instagram.com/manusdeicentre/" target="_blank" rel="noopener">Instagram · @manusdeicentre ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Manus Dei Christian Centre</span
+          ><span>Rooted in faith. Growing in purpose.</span>
+        </div>
+      </div>
+    </footer>
+    <button class="back-top" type="button" aria-label="Back to top">↑</button>
+
+    <script>
+      // Mobile navigation: close after choosing a section or pressing Escape.
+      const menuButton = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      function closeMenu() {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation menu');
+        navLinks.classList.remove('open');
+      }
+      menuButton.addEventListener('click', () => {
+        const open = menuButton.getAttribute('aria-expanded') !== 'true';
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute(
+          'aria-label',
+          open ? 'Close navigation menu' : 'Open navigation menu'
+        );
+        navLinks.classList.toggle('open', open);
+      });
+      navLinks
+        .querySelectorAll('a')
+        .forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMenu();
+      });
+
+      // Keep the navigation indicator in sync with the visible section.
+      const navAnchors = [...document.querySelectorAll('.nav-links a')];
+      const observedSections = navAnchors
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+      const sectionObserver = new IntersectionObserver(
+        entries =>
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              navAnchors.forEach(link =>
+                link.classList.toggle(
+                  'active',
+                  link.getAttribute('href') === '#' + entry.target.id
+                )
+              );
+            }
+          }),
+        { rootMargin: '-25% 0px -65% 0px' }
+      );
+      observedSections.forEach(section => sectionObserver.observe(section));
+
+      // Reveal content as it enters the viewport; keep content visible without observer support.
+      const revealItems = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(
+          entries =>
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+              }
+            }),
+          { threshold: 0.12 }
+        );
+        revealItems.forEach(item => revealObserver.observe(item));
+      } else revealItems.forEach(item => item.classList.add('revealed'));
+
+      // Accessible, single-open FAQ accordion.
+      document.querySelectorAll('.faq-question').forEach(button =>
+        button.addEventListener('click', () => {
+          const expanded = button.getAttribute('aria-expanded') === 'true';
+          document
+            .querySelectorAll('.faq-question')
+            .forEach(other => other.setAttribute('aria-expanded', 'false'));
+          button.setAttribute('aria-expanded', String(!expanded));
+        })
+      );
+
+      // Front-end validation with a visible success state. Connect an endpoint before collecting live submissions.
+      const form = document.querySelector('#contact-form');
+      const formMessage = document.querySelector('#form-message');
+      const fields = ['name', 'email', 'phone', 'interest', 'message'];
+      function validateField(field) {
+        const input = form.elements[field];
+        const error = document.querySelector('#' + field + '-error');
+        let message = '';
+        if (!input.value.trim()) message = 'Please complete this field.';
+        else if (
+          field === 'email' &&
+          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())
+        )
+          message = 'Enter a valid email address.';
+        else if (
+          field === 'phone' &&
+          !/^\+?[0-9().\s-]{7,20}$/.test(input.value.trim())
+        )
+          message = 'Enter a valid phone number.';
+        error.textContent = message;
+        input.setAttribute('aria-invalid', String(Boolean(message)));
+        return !message;
+      }
+      fields.forEach(name =>
+        form.elements[name].addEventListener('blur', () => validateField(name))
+      );
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const valid = fields.map(validateField).every(Boolean);
+        formMessage.className = 'form-message';
+        if (!valid) {
+          formMessage.textContent =
+            'Please correct the highlighted fields and try again.';
+          formMessage.classList.add('error');
+          form.querySelector('[aria-invalid="true"]')?.focus();
+          return;
+        }
+        formMessage.textContent =
+          'Thank you. Your message is ready, but this form is not connected to an inbox yet. Please use the helpdesk link above to reach us.';
+        formMessage.classList.add('success');
+        form.reset();
+        fields.forEach(name =>
+          form.elements[name].setAttribute('aria-invalid', 'false')
+        );
+      });
+
+      // Return-to-top control.
+      const backTop = document.querySelector('.back-top');
+      window.addEventListener(
+        'scroll',
+        () => backTop.classList.toggle('visible', window.scrollY > 500),
+        { passive: true }
+      );
+      backTop.addEventListener('click', () =>
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      );
+    </script>
+  </body>
+</html>
