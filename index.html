@@ -1094,8 +1094,130 @@
           transform: none;
         }
       }
+
+      .hero-photo {
+        position: absolute;
+        inset: 0;
+        z-index: -3;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 68% 46%;
+      }
+      .hero:before {
+        background: linear-gradient(90deg, #000e 0%, #000b 44%, #0002 100%),
+          linear-gradient(0deg, #0008, transparent 55%);
+      }
+      .hero-content {
+        width: min(100% - 48px, 1180px);
+        max-width: none;
+      }
+      .section-photo {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+      .welcome-photo {
+        aspect-ratio: 5 / 4;
+        object-position: 67% center;
+      }
+      .photo-split {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        gap: clamp(24px, 5vw, 70px);
+        align-items: center;
+      }
+      #clinic .arm-photo { object-position: center 23%; }
+      .arm-photo {
+        margin-bottom: 22px;
+      }
+      .service-photos {
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+        gap: 12px;
+        margin-top: -30px;
+      }
+      .service-photos .section-photo {
+        flex: 1;
+        min-width: 0;
+        max-width: 280px;
+      }
+      .program-card .section-photo {
+        max-width: 240px;
+        margin-bottom: 14px;
+      }
+      @media (max-width: 760px) {
+        .hero-photo { object-position: 74% center; }
+        .hero:before {
+          background: linear-gradient(90deg, #000d, #0007),
+            linear-gradient(0deg, #000b, transparent 75%);
+        }
+        .photo-split, .contact, .form, .about-grid, .arms-grid, .program-groups { grid-template-columns: minmax(0, 1fr); }
+        .field, .arm, .program-group, .service-row > *, .footer-top > * { min-width: 0; }
+        .footer-top { overflow-wrap: anywhere; }
+        .service-photos {
+          grid-column: auto;
+          grid-row: auto;
+          margin-top: 6px;
+        }
+        .service-row:has(.service-photos) > p { grid-row: 2; }
+      }
     </style>
-  </head>
+  <style>
+.service-row:has(.service-photos), .program-card:has(.section-photo) {
+  display:grid;grid-template-columns:minmax(0,36%) minmax(0,1fr);
+  column-gap:clamp(16px,4vw,48px);row-gap:8px;align-content:center;
+}
+.service-row:has(.service-photos) > h3,.program-card:has(img) > h4 {grid-column:2;grid-row:1;align-self:end;margin:0}
+.service-row:has(.service-photos) > p,.program-card:has(img) > p {grid-column:2;grid-row:2;align-self:start}
+.service-row .service-photos,.program-card > img.section-photo {grid-column:1;grid-row:1 / 3;margin:0;align-self:center}
+.service-photos {display:grid;gap:5px}
+.service-photos .section-photo,.program-card .section-photo {max-width:none;aspect-ratio:4/3;object-position:center 30%}
+.service-photos:has(img + img) {grid-template-columns:1fr 1fr}
+.service-photos:has(img + img) img {aspect-ratio:2/3}
+.arms-grid {grid-template-columns:1fr}
+.arms-grid .arm {display:grid;grid-template-columns:minmax(0,38%) minmax(0,1fr);gap:10px clamp(20px,4vw,50px);padding:24px;min-height:0;align-content:center}
+.arm > * {grid-column:2}
+.arm > .arm-photo {grid-column:1;grid-row:1 / span 12;width:100%;height:100%;min-height:240px;margin:0;object-position:center 30%}
+.arm .arm-logo {height:65px;max-width:170px;margin:0}
+.arm .btn {justify-self:start}
+@media(max-width:600px){
+.service-row:has(.service-photos),.program-card:has(.section-photo){grid-template-columns:minmax(0,32%) minmax(0,1fr);column-gap:12px;padding-inline:8px}
+.service-photos:has(img + img){grid-template-columns:1fr}
+.service-photos .section-photo,.program-card .section-photo,.service-photos:has(img + img) img{aspect-ratio:4/5}
+.arms-grid .arm{display:block;padding:20px}
+.arm > .arm-photo{width:36%;height:auto;min-height:0;aspect-ratio:3/4;float:left;margin:0 16px 12px 0}
+.arm .arm-logo{width:42%;display:inline-flex}
+.arm .btn{clear:both}
+}
+</style><style>.service-row:has(.service-photos) > div:last-child:not(.service-photos){grid-column:2;grid-row:2}</style><style>
+.footer-col .socials {display:grid;gap:0;margin-top:16px}
+.footer-col .socials a {display:grid;gap:2px;margin:0;padding:9px 0;border-top:1px solid #ffffff30;text-decoration:none}
+.socials strong {font-size:.84rem;color:#fff}
+.socials span {font-size:.82rem;color:#d7d1c7;overflow-wrap:anywhere}
+.socials a:is(:hover,:focus-visible) strong {color:var(--gold)}
+</style><style>
+.album {border-top:1px solid #d5d0c8}
+.album:last-child {border-bottom:1px solid #d5d0c8}
+.album summary {display:grid;grid-template-columns:clamp(72px,12vw,150px) 1fr auto auto;align-items:center;gap:clamp(8px,2vw,28px);padding:14px 0;cursor:pointer;font:clamp(1.1rem,2vw,1.7rem) var(--serif)}
+.album summary::-webkit-details-marker {display:none}
+.album summary:after {content:'+'}
+.album[open] summary:after {content:'−'}
+.album summary img,.photo-grid img {width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.album small {font: .85rem var(--sans,sans-serif);color:#555}
+.photo-grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(min(145px,42%),1fr));gap:8px;padding-bottom:22px}
+.photo-grid a {overflow:hidden}
+@media(prefers-reduced-motion:no-preference){
+.photo-grid img {transition:transform .25s ease}
+.photo-grid a:is(:hover,:focus-visible) img {transform:scale(1.04)}
+.album[open] .photo-grid {animation:gallery-in .23s ease-out}
+@keyframes gallery-in {from{opacity:.35;transform:translateY(4px)}to{opacity:1;transform:none}}
+}
+</style></head>
   <body>
     <header class="nav">
       <nav class="wrap nav-inner" aria-label="Main navigation">
@@ -1118,7 +1240,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#arms">Our Arms</a></li>
-          <li><a href="#programs">Programs</a></li>
+          <li><a href="#programs">Programs</a></li><li><a href="#gallery">Photo Gallery</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -1143,6 +1265,7 @@
 
     <main>
       <section class="hero" id="home">
+        <img class="hero-photo" src="/resources/photos/01-hero-transformation.jpg" alt="" fetchpriority="high">
         <div class="wrap hero-content">
           <div class="eyebrow">Manus Dei Christian Centre</div>
           <h1>Manus Dei<br />Christian Centre</h1>
@@ -1192,11 +1315,8 @@
                 transformation through our various arms.
               </p>
             </div>
-            <div class="about-mark" data-reveal>
-              <img
-                src="/resources/MDCC-LOGO-1.png"
-                alt="Manus Dei Centre brand logo"
-              />
+            <div data-reveal>
+              <img class="section-photo welcome-photo" src="/resources/photos/02-welcome-to-mdcc.jpg" width="1672" height="941" alt="A smiling woman holds open the door" loading="lazy" decoding="async">
             </div>
           </div>
           <div class="highlights">
@@ -1241,6 +1361,9 @@
           <div class="service-list">
             <article class="service-row">
               <h3>GENERAL CONSULTATION</h3>
+              <div class="service-photos">
+                <img class="section-photo " src="/resources/photos/image-20.jpg" width="1672" height="941" alt="Two people talk in a quiet seating area" loading="lazy" decoding="async">
+              </div>
               <p>
                 A safe space for individuals from diverse religious backgrounds
                 to consult on aspects of faith and life issues.
@@ -1248,6 +1371,9 @@
             </article>
             <article class="service-row">
               <h3>PRAYER LINE</h3>
+              <div class="service-photos">
+                <img class="section-photo " src="/resources/photos/07-prayer-line.jpg" width="1024" height="1536" alt="A minister speaks on the phone beside an open Bible" loading="lazy" decoding="async">
+              </div>
               <p>
                 Connect with trained ministers who are ready to listen, offer
                 comfort, and pray for and with you regarding your specific
@@ -1256,6 +1382,9 @@
             </article>
             <article class="service-row">
               <h3>CHRISTIAN TRAINING PROGRAMS</h3>
+              <div class="service-photos">
+                <img class="section-photo " src="/resources/photos/image-17.jpg" width="1672" height="941" alt="A teacher leads a small group Bible study" loading="lazy" decoding="async">
+              </div>
               <p>
                 Courses and programs to edify and equip you on your faith
                 journey. We walk with you to deepen your understanding of
@@ -1264,7 +1393,7 @@
               </p>
             </article>
             <article class="service-row">
-              <h3>MINISTRY TRAINING PROGRAMS &amp; MANAGEMENT</h3>
+              <h3>MINISTRY TRAINING PROGRAMS &amp; MANAGEMENT</h3><div class='service-photos'><img class='section-photo' src='/resources/photos/ministry-training.jpg' alt='Ministry leaders reviewing an outreach plan together' loading='lazy'></div>
               <div>
                 <p>
                   Designed for ministers called to serve, build, and steward
@@ -1282,6 +1411,10 @@
             </article>
             <article class="service-row">
               <h3>SANCTUARY RETREAT &amp; CONSECRATION CAMP</h3>
+              <div class="service-photos">
+                <img class="section-photo " src="/resources/photos/image-18.jpg" width="1774" height="887" alt="A path leads to a chapel at sunset" loading="lazy" decoding="async">
+                <img class="section-photo " src="/resources/photos/image-16.jpg" width="1774" height="887" alt="A small group prays outdoors" loading="lazy" decoding="async">
+              </div>
               <p>
                 Designed for personal edification and spiritual growth.
                 Sanctuary Retreat offers space to step away from the noise of
@@ -1291,7 +1424,7 @@
               </p>
             </article>
             <article class="service-row">
-              <h3>SUBSIDIZED SUBSCRIPTION PACKAGES</h3>
+              <h3>SUBSIDIZED SUBSCRIPTION PACKAGES</h3><div class='service-photos'><img class='section-photo' src='/resources/photos/subscription-packages.jpg' alt='A coordinator discussing membership options with a visitor' loading='lazy'></div>
               <p>
                 Services throughout the Centre designed to nurture you
                 spiritually, mentally, and physically for a balanced,
@@ -1317,7 +1450,8 @@
       </section>
 
       <section class="section edification" id="edification">
-        <div class="wrap" data-reveal>
+        <div class="wrap photo-split" data-reveal>
+          <div>
           <div class="eyebrow">Edification Plan</div>
           <h2>A thoughtful rhythm for your spiritual journey.</h2>
           <p>
@@ -1335,6 +1469,8 @@
             rel="noopener"
             >Get Your Customized Edification Plan Today! ↗</a
           >
+          </div>
+          <img class="section-photo " src="/resources/photos/06-edification-plan.jpg" width="1672" height="941" alt="A woman prays beside an open Bible" loading="lazy" decoding="async">
         </div>
       </section>
 
@@ -1350,6 +1486,7 @@
           </div>
           <div class="arms-grid">
             <article class="arm" id="clinic" data-reveal>
+              <img class="section-photo arm-photo" src="/resources/photos/03-manus-dei-clinic.jpg" width="1024" height="1536" alt="Two women talk in a counselling setting" loading="lazy" decoding="async">
               <div class="arm-logo"><img src="/resources/MDCLINIC-LOGO.png" alt="Manus Dei Clinic logo"></div>
               <h3>Manus Dei Clinic</h3>
               <p>
@@ -1381,6 +1518,7 @@
               >
             </article>
             <article class="arm" id="united" data-reveal>
+              <img class="section-photo arm-photo" src="/resources/photos/04-manus-dei-united.jpg" width="1672" height="941" alt="A small fellowship group in conversation" loading="lazy" decoding="async">
               <div class="arm-logo"><img src="/resources/MDUNITED-LOGO.png" alt="Manus Dei United logo"></div>
               <h3>Manus Dei United</h3>
               <p>
@@ -1404,13 +1542,14 @@
               <p class="arm-tag">A Fellowship of Like Minds!</p>
               <a
                 class="btn btn-dark"
-                href="https://tinyurl.com/manusdeihelpdesk"
+                href="https://tinyurl.com/manusdeiunited"
                 target="_blank"
                 rel="noopener"
                 >Join our Community ↗</a
               >
             </article>
             <article class="arm" id="ministry" data-reveal>
+              <img class="section-photo arm-photo" src="/resources/photos/05-manus-dei-ministry.jpg" width="1672" height="941" alt="Volunteers share supplies and talk with community members" loading="lazy" decoding="async">
               <div class="arm-logo"><img src="/resources/MDMINISTRY-LOGO.png" alt="Manus Dei Ministry logo"></div>
               <h3>Manus Dei Ministry</h3>
               <p>
@@ -1450,6 +1589,7 @@
             <div class="program-group" data-reveal>
               <h3>At Manus Dei United</h3>
               <article class="program-card">
+                <img class="section-photo " src="/resources/photos/image-15.jpg" width="1024" height="1536" alt="A woman pauses in prayer at a desk" loading="lazy" decoding="async">
                 <h4>Fresh Start Devotion</h4>
                 <p>
                   From the 1st to the 8th of each month, we engage in prayer,
@@ -1522,6 +1662,7 @@
         </div>
       </section>
 
+      <section class="section" id="gallery"><div class="wrap"><h2>Photo Gallery</h2><details class="album"><summary><img loading="lazy" src="/resources/gallery/0/1-480.jpg" alt=""><span>Mission Hope and Light · Kagini Day 1</span><small>36 photos</small></summary><div class="photo-grid"><a href="/resources/gallery/0/1-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/1-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 1"></a><a href="/resources/gallery/0/2-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/2-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 2"></a><a href="/resources/gallery/0/3-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/3-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 3"></a><a href="/resources/gallery/0/4-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/4-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 4"></a><a href="/resources/gallery/0/5-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/5-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 5"></a><a href="/resources/gallery/0/6-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/6-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 6"></a><a href="/resources/gallery/0/7-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/7-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 7"></a><a href="/resources/gallery/0/8-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/8-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 8"></a><a href="/resources/gallery/0/9-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/9-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 9"></a><a href="/resources/gallery/0/10-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/10-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 10"></a><a href="/resources/gallery/0/11-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/11-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 11"></a><a href="/resources/gallery/0/12-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/12-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 12"></a><a href="/resources/gallery/0/13-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/13-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 13"></a><a href="/resources/gallery/0/14-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/14-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 14"></a><a href="/resources/gallery/0/15-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/15-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 15"></a><a href="/resources/gallery/0/16-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/16-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 16"></a><a href="/resources/gallery/0/17-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/17-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 17"></a><a href="/resources/gallery/0/18-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/18-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 18"></a><a href="/resources/gallery/0/19-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/19-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 19"></a><a href="/resources/gallery/0/20-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/20-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 20"></a><a href="/resources/gallery/0/21-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/21-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 21"></a><a href="/resources/gallery/0/22-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/22-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 22"></a><a href="/resources/gallery/0/23-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/23-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 23"></a><a href="/resources/gallery/0/24-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/24-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 24"></a><a href="/resources/gallery/0/25-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/25-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 25"></a><a href="/resources/gallery/0/26-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/26-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 26"></a><a href="/resources/gallery/0/27-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/27-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 27"></a><a href="/resources/gallery/0/28-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/28-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 28"></a><a href="/resources/gallery/0/29-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/29-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 29"></a><a href="/resources/gallery/0/30-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/30-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 30"></a><a href="/resources/gallery/0/31-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/31-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 31"></a><a href="/resources/gallery/0/32-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/32-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 32"></a><a href="/resources/gallery/0/33-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/33-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 33"></a><a href="/resources/gallery/0/34-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/34-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 34"></a><a href="/resources/gallery/0/35-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/35-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 35"></a><a href="/resources/gallery/0/36-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/0/36-480.jpg" alt="Mission Hope and Light · Kagini Day 1, photo 36"></a></div></details><details class="album"><summary><img loading="lazy" src="/resources/gallery/1/1-480.jpg" alt=""><span>Mission Hope and Light · Kagini Day 2</span><small>36 photos</small></summary><div class="photo-grid"><a href="/resources/gallery/1/1-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/1-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 1"></a><a href="/resources/gallery/1/2-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/2-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 2"></a><a href="/resources/gallery/1/3-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/3-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 3"></a><a href="/resources/gallery/1/4-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/4-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 4"></a><a href="/resources/gallery/1/5-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/5-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 5"></a><a href="/resources/gallery/1/6-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/6-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 6"></a><a href="/resources/gallery/1/7-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/7-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 7"></a><a href="/resources/gallery/1/8-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/8-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 8"></a><a href="/resources/gallery/1/9-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/9-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 9"></a><a href="/resources/gallery/1/10-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/10-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 10"></a><a href="/resources/gallery/1/11-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/11-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 11"></a><a href="/resources/gallery/1/12-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/12-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 12"></a><a href="/resources/gallery/1/13-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/13-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 13"></a><a href="/resources/gallery/1/14-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/14-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 14"></a><a href="/resources/gallery/1/15-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/15-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 15"></a><a href="/resources/gallery/1/16-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/16-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 16"></a><a href="/resources/gallery/1/17-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/17-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 17"></a><a href="/resources/gallery/1/18-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/18-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 18"></a><a href="/resources/gallery/1/19-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/19-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 19"></a><a href="/resources/gallery/1/20-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/20-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 20"></a><a href="/resources/gallery/1/21-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/21-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 21"></a><a href="/resources/gallery/1/22-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/22-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 22"></a><a href="/resources/gallery/1/23-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/23-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 23"></a><a href="/resources/gallery/1/24-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/24-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 24"></a><a href="/resources/gallery/1/25-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/25-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 25"></a><a href="/resources/gallery/1/26-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/26-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 26"></a><a href="/resources/gallery/1/27-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/27-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 27"></a><a href="/resources/gallery/1/28-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/28-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 28"></a><a href="/resources/gallery/1/29-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/29-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 29"></a><a href="/resources/gallery/1/30-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/30-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 30"></a><a href="/resources/gallery/1/31-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/31-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 31"></a><a href="/resources/gallery/1/32-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/32-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 32"></a><a href="/resources/gallery/1/33-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/33-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 33"></a><a href="/resources/gallery/1/34-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/34-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 34"></a><a href="/resources/gallery/1/35-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/35-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 35"></a><a href="/resources/gallery/1/36-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/1/36-480.jpg" alt="Mission Hope and Light · Kagini Day 2, photo 36"></a></div></details><details class="album"><summary><img loading="lazy" src="/resources/gallery/2/1-480.jpg" alt=""><span>Outreach</span><small>26 photos</small></summary><div class="photo-grid"><a href="/resources/gallery/2/1-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/1-480.jpg" alt="Outreach, photo 1"></a><a href="/resources/gallery/2/2-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/2-480.jpg" alt="Outreach, photo 2"></a><a href="/resources/gallery/2/3-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/3-480.jpg" alt="Outreach, photo 3"></a><a href="/resources/gallery/2/4-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/4-480.jpg" alt="Outreach, photo 4"></a><a href="/resources/gallery/2/5-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/5-480.jpg" alt="Outreach, photo 5"></a><a href="/resources/gallery/2/6-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/6-480.jpg" alt="Outreach, photo 6"></a><a href="/resources/gallery/2/7-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/7-480.jpg" alt="Outreach, photo 7"></a><a href="/resources/gallery/2/8-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/8-480.jpg" alt="Outreach, photo 8"></a><a href="/resources/gallery/2/9-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/9-480.jpg" alt="Outreach, photo 9"></a><a href="/resources/gallery/2/10-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/10-480.jpg" alt="Outreach, photo 10"></a><a href="/resources/gallery/2/11-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/11-480.jpg" alt="Outreach, photo 11"></a><a href="/resources/gallery/2/12-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/12-480.jpg" alt="Outreach, photo 12"></a><a href="/resources/gallery/2/13-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/13-480.jpg" alt="Outreach, photo 13"></a><a href="/resources/gallery/2/14-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/14-480.jpg" alt="Outreach, photo 14"></a><a href="/resources/gallery/2/15-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/15-480.jpg" alt="Outreach, photo 15"></a><a href="/resources/gallery/2/16-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/16-480.jpg" alt="Outreach, photo 16"></a><a href="/resources/gallery/2/17-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/17-480.jpg" alt="Outreach, photo 17"></a><a href="/resources/gallery/2/18-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/18-480.jpg" alt="Outreach, photo 18"></a><a href="/resources/gallery/2/19-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/19-480.jpg" alt="Outreach, photo 19"></a><a href="/resources/gallery/2/20-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/20-480.jpg" alt="Outreach, photo 20"></a><a href="/resources/gallery/2/21-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/21-480.jpg" alt="Outreach, photo 21"></a><a href="/resources/gallery/2/22-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/22-480.jpg" alt="Outreach, photo 22"></a><a href="/resources/gallery/2/23-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/23-480.jpg" alt="Outreach, photo 23"></a><a href="/resources/gallery/2/24-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/24-480.jpg" alt="Outreach, photo 24"></a><a href="/resources/gallery/2/25-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/25-480.jpg" alt="Outreach, photo 25"></a><a href="/resources/gallery/2/26-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/2/26-480.jpg" alt="Outreach, photo 26"></a></div></details><details class="album"><summary><img loading="lazy" src="/resources/gallery/3/1-480.jpg" alt=""><span>Hospital Outreach</span><small>19 photos</small></summary><div class="photo-grid"><a href="/resources/gallery/3/1-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/1-480.jpg" alt="Hospital Outreach, photo 1"></a><a href="/resources/gallery/3/2-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/2-480.jpg" alt="Hospital Outreach, photo 2"></a><a href="/resources/gallery/3/3-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/3-480.jpg" alt="Hospital Outreach, photo 3"></a><a href="/resources/gallery/3/4-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/4-480.jpg" alt="Hospital Outreach, photo 4"></a><a href="/resources/gallery/3/5-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/5-480.jpg" alt="Hospital Outreach, photo 5"></a><a href="/resources/gallery/3/6-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/6-480.jpg" alt="Hospital Outreach, photo 6"></a><a href="/resources/gallery/3/7-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/7-480.jpg" alt="Hospital Outreach, photo 7"></a><a href="/resources/gallery/3/8-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/8-480.jpg" alt="Hospital Outreach, photo 8"></a><a href="/resources/gallery/3/9-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/9-480.jpg" alt="Hospital Outreach, photo 9"></a><a href="/resources/gallery/3/10-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/10-480.jpg" alt="Hospital Outreach, photo 10"></a><a href="/resources/gallery/3/11-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/11-480.jpg" alt="Hospital Outreach, photo 11"></a><a href="/resources/gallery/3/12-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/12-480.jpg" alt="Hospital Outreach, photo 12"></a><a href="/resources/gallery/3/13-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/13-480.jpg" alt="Hospital Outreach, photo 13"></a><a href="/resources/gallery/3/14-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/14-480.jpg" alt="Hospital Outreach, photo 14"></a><a href="/resources/gallery/3/15-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/15-480.jpg" alt="Hospital Outreach, photo 15"></a><a href="/resources/gallery/3/16-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/16-480.jpg" alt="Hospital Outreach, photo 16"></a><a href="/resources/gallery/3/17-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/17-480.jpg" alt="Hospital Outreach, photo 17"></a><a href="/resources/gallery/3/18-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/18-480.jpg" alt="Hospital Outreach, photo 18"></a><a href="/resources/gallery/3/19-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/3/19-480.jpg" alt="Hospital Outreach, photo 19"></a></div></details><details class="album"><summary><img loading="lazy" src="/resources/gallery/4/1-480.jpg" alt=""><span>RAIN Conference</span><small>77 photos</small></summary><div class="photo-grid"><a href="/resources/gallery/4/1-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/1-480.jpg" alt="RAIN Conference, photo 1"></a><a href="/resources/gallery/4/2-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/2-480.jpg" alt="RAIN Conference, photo 2"></a><a href="/resources/gallery/4/3-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/3-480.jpg" alt="RAIN Conference, photo 3"></a><a href="/resources/gallery/4/4-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/4-480.jpg" alt="RAIN Conference, photo 4"></a><a href="/resources/gallery/4/5-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/5-480.jpg" alt="RAIN Conference, photo 5"></a><a href="/resources/gallery/4/6-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/6-480.jpg" alt="RAIN Conference, photo 6"></a><a href="/resources/gallery/4/7-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/7-480.jpg" alt="RAIN Conference, photo 7"></a><a href="/resources/gallery/4/8-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/8-480.jpg" alt="RAIN Conference, photo 8"></a><a href="/resources/gallery/4/9-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/9-480.jpg" alt="RAIN Conference, photo 9"></a><a href="/resources/gallery/4/10-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/10-480.jpg" alt="RAIN Conference, photo 10"></a><a href="/resources/gallery/4/11-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/11-480.jpg" alt="RAIN Conference, photo 11"></a><a href="/resources/gallery/4/12-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/12-480.jpg" alt="RAIN Conference, photo 12"></a><a href="/resources/gallery/4/13-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/13-480.jpg" alt="RAIN Conference, photo 13"></a><a href="/resources/gallery/4/14-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/14-480.jpg" alt="RAIN Conference, photo 14"></a><a href="/resources/gallery/4/15-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/15-480.jpg" alt="RAIN Conference, photo 15"></a><a href="/resources/gallery/4/16-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/16-480.jpg" alt="RAIN Conference, photo 16"></a><a href="/resources/gallery/4/17-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/17-480.jpg" alt="RAIN Conference, photo 17"></a><a href="/resources/gallery/4/18-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/18-480.jpg" alt="RAIN Conference, photo 18"></a><a href="/resources/gallery/4/19-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/19-480.jpg" alt="RAIN Conference, photo 19"></a><a href="/resources/gallery/4/20-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/20-480.jpg" alt="RAIN Conference, photo 20"></a><a href="/resources/gallery/4/21-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/21-480.jpg" alt="RAIN Conference, photo 21"></a><a href="/resources/gallery/4/22-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/22-480.jpg" alt="RAIN Conference, photo 22"></a><a href="/resources/gallery/4/23-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/23-480.jpg" alt="RAIN Conference, photo 23"></a><a href="/resources/gallery/4/24-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/24-480.jpg" alt="RAIN Conference, photo 24"></a><a href="/resources/gallery/4/25-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/25-480.jpg" alt="RAIN Conference, photo 25"></a><a href="/resources/gallery/4/26-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/26-480.jpg" alt="RAIN Conference, photo 26"></a><a href="/resources/gallery/4/27-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/27-480.jpg" alt="RAIN Conference, photo 27"></a><a href="/resources/gallery/4/28-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/28-480.jpg" alt="RAIN Conference, photo 28"></a><a href="/resources/gallery/4/29-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/29-480.jpg" alt="RAIN Conference, photo 29"></a><a href="/resources/gallery/4/30-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/30-480.jpg" alt="RAIN Conference, photo 30"></a><a href="/resources/gallery/4/31-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/31-480.jpg" alt="RAIN Conference, photo 31"></a><a href="/resources/gallery/4/32-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/32-480.jpg" alt="RAIN Conference, photo 32"></a><a href="/resources/gallery/4/33-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/33-480.jpg" alt="RAIN Conference, photo 33"></a><a href="/resources/gallery/4/34-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/34-480.jpg" alt="RAIN Conference, photo 34"></a><a href="/resources/gallery/4/35-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/35-480.jpg" alt="RAIN Conference, photo 35"></a><a href="/resources/gallery/4/36-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/36-480.jpg" alt="RAIN Conference, photo 36"></a><a href="/resources/gallery/4/37-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/37-480.jpg" alt="RAIN Conference, photo 37"></a><a href="/resources/gallery/4/38-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/38-480.jpg" alt="RAIN Conference, photo 38"></a><a href="/resources/gallery/4/39-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/39-480.jpg" alt="RAIN Conference, photo 39"></a><a href="/resources/gallery/4/40-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/40-480.jpg" alt="RAIN Conference, photo 40"></a><a href="/resources/gallery/4/41-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/41-480.jpg" alt="RAIN Conference, photo 41"></a><a href="/resources/gallery/4/42-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/42-480.jpg" alt="RAIN Conference, photo 42"></a><a href="/resources/gallery/4/43-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/43-480.jpg" alt="RAIN Conference, photo 43"></a><a href="/resources/gallery/4/44-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/44-480.jpg" alt="RAIN Conference, photo 44"></a><a href="/resources/gallery/4/45-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/45-480.jpg" alt="RAIN Conference, photo 45"></a><a href="/resources/gallery/4/46-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/46-480.jpg" alt="RAIN Conference, photo 46"></a><a href="/resources/gallery/4/47-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/47-480.jpg" alt="RAIN Conference, photo 47"></a><a href="/resources/gallery/4/48-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/48-480.jpg" alt="RAIN Conference, photo 48"></a><a href="/resources/gallery/4/49-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/49-480.jpg" alt="RAIN Conference, photo 49"></a><a href="/resources/gallery/4/50-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/50-480.jpg" alt="RAIN Conference, photo 50"></a><a href="/resources/gallery/4/51-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/51-480.jpg" alt="RAIN Conference, photo 51"></a><a href="/resources/gallery/4/52-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/52-480.jpg" alt="RAIN Conference, photo 52"></a><a href="/resources/gallery/4/53-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/53-480.jpg" alt="RAIN Conference, photo 53"></a><a href="/resources/gallery/4/54-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/54-480.jpg" alt="RAIN Conference, photo 54"></a><a href="/resources/gallery/4/55-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/55-480.jpg" alt="RAIN Conference, photo 55"></a><a href="/resources/gallery/4/56-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/56-480.jpg" alt="RAIN Conference, photo 56"></a><a href="/resources/gallery/4/57-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/57-480.jpg" alt="RAIN Conference, photo 57"></a><a href="/resources/gallery/4/58-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/58-480.jpg" alt="RAIN Conference, photo 58"></a><a href="/resources/gallery/4/59-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/59-480.jpg" alt="RAIN Conference, photo 59"></a><a href="/resources/gallery/4/60-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/60-480.jpg" alt="RAIN Conference, photo 60"></a><a href="/resources/gallery/4/61-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/61-480.jpg" alt="RAIN Conference, photo 61"></a><a href="/resources/gallery/4/62-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/62-480.jpg" alt="RAIN Conference, photo 62"></a><a href="/resources/gallery/4/63-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/63-480.jpg" alt="RAIN Conference, photo 63"></a><a href="/resources/gallery/4/64-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/64-480.jpg" alt="RAIN Conference, photo 64"></a><a href="/resources/gallery/4/65-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/65-480.jpg" alt="RAIN Conference, photo 65"></a><a href="/resources/gallery/4/66-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/66-480.jpg" alt="RAIN Conference, photo 66"></a><a href="/resources/gallery/4/67-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/67-480.jpg" alt="RAIN Conference, photo 67"></a><a href="/resources/gallery/4/68-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/68-480.jpg" alt="RAIN Conference, photo 68"></a><a href="/resources/gallery/4/69-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/69-480.jpg" alt="RAIN Conference, photo 69"></a><a href="/resources/gallery/4/70-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/70-480.jpg" alt="RAIN Conference, photo 70"></a><a href="/resources/gallery/4/71-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/71-480.jpg" alt="RAIN Conference, photo 71"></a><a href="/resources/gallery/4/72-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/72-480.jpg" alt="RAIN Conference, photo 72"></a><a href="/resources/gallery/4/73-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/73-480.jpg" alt="RAIN Conference, photo 73"></a><a href="/resources/gallery/4/74-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/74-480.jpg" alt="RAIN Conference, photo 74"></a><a href="/resources/gallery/4/75-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/75-480.jpg" alt="RAIN Conference, photo 75"></a><a href="/resources/gallery/4/76-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/76-480.jpg" alt="RAIN Conference, photo 76"></a><a href="/resources/gallery/4/77-1440.jpg"><img loading="lazy" decoding="async" src="/resources/gallery/4/77-480.jpg" alt="RAIN Conference, photo 77"></a></div></details></div></section>
       <section class="section proof" aria-label="Our purpose">
         <div class="wrap proof-grid">
           <p class="proof-quote" data-reveal>
@@ -1541,7 +1682,8 @@
       </section>
 
       <section class="section partnership" id="partnership">
-        <div class="wrap">
+        <div class="wrap photo-split">
+          <div>
           <div class="section-head" data-reveal>
             <div class="eyebrow">Partnerships &amp; outreach</div>
             <h2>
@@ -1569,6 +1711,8 @@
               >Partner With Us ↗</a
             >
           </div>
+          </div>
+          <img class="section-photo " src="/resources/photos/image-19.jpg" width="1774" height="887" alt="A group walks together outside a church" loading="lazy" decoding="async">
         </div>
       </section>
 
@@ -1745,7 +1889,7 @@
                 <a href="tel:+2349091001119">+234 909 100 1119</a><br>
                 <a href="tel:+2349091001110">+234 909 100 1110</a>
               </p>
-              <p><strong>Address</strong><br>No. 558, Aliyu Dikko Street, Area 1, Garki, Abuja.</p>
+              <p><strong>Address</strong><br>No. 588, Aliyu Dikko Street, Area 1, Garki, Abuja.</p>
             </div>
           </div>
           <form class="form" id="contact-form" novalidate data-reveal>
@@ -1851,12 +1995,12 @@
               >Helpdesk</a
             ><a href="tel:+2349091001119">+234 909 100 1119</a
             ><a href="tel:+2349091001110">+234 909 100 1110</a>
-            <p class="footer-contact">No. 558, Aliyu Dikko Street,<br>Area 1, Garki, Abuja.</p>
+            <a href="https://tinyurl.com/manusdeiunited" target="_blank" rel="noopener">Join the community</a><p class="footer-contact">No. 588, Aliyu Dikko Street,<br>Area 1, Garki, Abuja.</p>
             <div class="socials" aria-label="Social media links">
-              <a href="https://www.facebook.com/manusdeichristiancentre" target="_blank" rel="noopener">Facebook · @manusdeichristiancentre ↗</a>
-              <a href="https://www.instagram.com/manusdeichristiancentre/" target="_blank" rel="noopener">Instagram · @manusdeichristiancentre ↗</a>
-              <a href="https://www.instagram.com/manusdeiministry/" target="_blank" rel="noopener">Instagram · @manusdeiministry ↗</a>
-              <a href="https://www.instagram.com/manusdeicentre/" target="_blank" rel="noopener">Instagram · @manusdeicentre ↗</a>
+              <a href="https://www.facebook.com/manusdeichristiancentre" target="_blank" rel="noopener"><strong>Facebook</strong><span>@manusdeichristiancentre</span></a>
+              <a href="https://www.instagram.com/manusdeichristiancentre/" target="_blank" rel="noopener"><strong>Instagram</strong><span>@manusdeichristiancentre</span></a>
+              <a href="https://www.instagram.com/manusdeiministry/" target="_blank" rel="noopener"><strong>Instagram</strong><span>@manusdeiministry</span></a>
+              <a href="https://www.instagram.com/manusdeicentre/" target="_blank" rel="noopener"><strong>Instagram</strong><span>@manusdeicentre</span></a>
             </div>
           </div>
         </div>
@@ -1998,5 +2142,52 @@
         window.scrollTo({ top: 0, behavior: 'smooth' })
       );
     </script>
-  </body>
+  <dialog id="gallery-viewer" aria-label="Photo viewer">
+  <div class="viewer-bar"><span aria-live="polite"></span><button type="button" data-close autofocus>Close</button></div>
+  <img alt="">
+  <div class="viewer-nav"><button type="button" data-prev>Previous</button><button type="button" data-next>Next</button></div>
+</dialog>
+<style>
+#gallery-viewer {width:min(92vw,1100px);max-height:94vh;margin:auto;padding:14px;border:0;background:#171717;color:white}
+#gallery-viewer::backdrop {background:#000d}
+#gallery-viewer img {display:block;width:100%;height:min(68vh,760px);object-fit:contain}
+.viewer-bar,.viewer-nav {display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px}
+#gallery-viewer button {color:white;background:transparent;border:1px solid #888;padding:8px 12px;cursor:pointer}
+#gallery-viewer button:disabled {opacity:.45}
+</style>
+<script>
+(() => {
+  const dialog = document.querySelector('#gallery-viewer');
+  const previous = dialog.querySelector('[data-prev]');
+  const next = dialog.querySelector('[data-next]');
+  let links = [];
+  let index = 0;
+  function show(i) {
+    if (i < 0 || i >= links.length) return;
+    index = i;
+    const photo = links[i].querySelector('img');
+    dialog.querySelector('img').src = links[i].href;
+    dialog.querySelector('img').alt = photo.alt;
+    dialog.querySelector('span').textContent = photo.alt + ' of ' + links.length;
+    previous.disabled = i === 0;
+    next.disabled = i === links.length - 1;
+  }
+  document.querySelector('#gallery').addEventListener('click', event => {
+    const link = event.target.closest('.photo-grid a');
+    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || !dialog.showModal) return;
+    event.preventDefault();
+    links = Array.from(link.parentElement.querySelectorAll('a'));
+    show(links.indexOf(link));
+    dialog.showModal();
+  });
+  previous.onclick = () => show(index - 1);
+  next.onclick = () => show(index + 1);
+  dialog.querySelector('[data-close]').onclick = () => dialog.close();
+  dialog.onkeydown = event => {
+    if (event.key === 'ArrowRight') show(index + 1);
+    if (event.key === 'ArrowLeft') show(index - 1);
+  };
+})();
+</script>
+</body>
 </html>
